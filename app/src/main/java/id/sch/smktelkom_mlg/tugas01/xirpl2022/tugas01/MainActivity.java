@@ -12,12 +12,10 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import com.google.android.gms.appindexing.Action;
-import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.common.api.GoogleApiClient;
 
 public class MainActivity extends AppCompatActivity {
-    EditText etNama;
+    EditText etN;
     EditText etTelp;
     RadioButton rbJNE;
     RadioButton rbTIKI;
@@ -25,22 +23,14 @@ public class MainActivity extends AppCompatActivity {
     RadioGroup rgJS;
     Button bOrder;
     Spinner spDomisili;
-    TextView tvHasil
-    String Nama = etNama.getText().toString();
-    int Telepon = Integer.parseInt(etTelp.getText().toString());
-    /**
-     * ATTENTION: This was auto-generated to implement the App Indexing API.
-     * See https://g.co/AppIndexing/AndroidStudio for more information.
-     */
-    private GoogleApiClient client;
+    TextView tvHasil;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_main);
-        setContentView(R.layout.activity_main);
-        etNama = (EditText)
+        etN = (EditText)
                 findViewById(R.id.editTextNama);
         etTelp = (EditText)
                 findViewById(R.id.editTextTelp);
@@ -62,101 +52,45 @@ public class MainActivity extends AppCompatActivity {
                 findViewById(R.id.buttonOrder);
         spDomisili = (Spinner)
                 findViewById(R.id.spinnerDomisili);
-        tvHasil2 = (TextView)
-                findViewById(R.id.textViewHasil2);
-        tvHasil3 = (TextView)
-                findViewById(R.id.textViewHasil3);
+        tvHasil = (TextView)
+                findViewById(R.id.textViewHasil);
 
-        bOrder.setOnClickListener(new view.OnClickListener()
-        @Override
-        public void OnClick (View view)
-        {
-            doProcess();
-            doClick();
-        })
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
-        client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
+        bOrder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                doProcess();
+            }
+        });
     }
 
-    @Override
-    public void onStart() {
-        super.onStart();
-
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
-        client.connect();
-        Action viewAction = Action.newAction(
-                Action.TYPE_VIEW, // TODO: choose an action type.
-                "Main Page", // TODO: Define a title for the content shown.
-                // TODO: If you have web page content that matches this app activity's content,
-                // make sure this auto-generated web page URL is correct.
-                // Otherwise, set the URL to null.
-                Uri.parse("http://host/path"),
-                // TODO: Make sure this auto-generated app URL is correct.
-                Uri.parse("android-app://id.sch.smktelkom_mlg.tugas01.xirpl2022.tugas01/http/host/path")
-        );
-        AppIndex.AppIndexApi.start(client, viewAction);
+    private void doProcess() {
+        String Nama = etN.getText().toString();
+        String Telepon = etTelp.getText().toString();
+        tvHasil.setText(Nama + "Pesanan anda segera kami proses, trimakasih sudah membeli produk kami, kami tunggu pemesanan selanjutnya oleh " + Telepon);
     }
 
-    @Override
-    public void onStop() {
-        super.onStop();
+    private boolean isValid() {
+        boolean valid = true;
 
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
-        Action viewAction = Action.newAction(
-                Action.TYPE_VIEW, // TODO: choose an action type.
-                "Main Page", // TODO: Define a title for the content shown.
-                // TODO: If you have web page content that matches this app activity's content,
-                // make sure this auto-generated web page URL is correct.
-                // Otherwise, set the URL to null.
-                Uri.parse("http://host/path"),
-                // TODO: Make sure this auto-generated app URL is correct.
-                Uri.parse("android-app://id.sch.smktelkom_mlg.tugas01.xirpl2022.tugas01/http/host/path")
-        );
-        AppIndex.AppIndexApi.end(client, viewAction);
-        client.disconnect();
-    }
+        String Nama = etN.getText().toString();
+        String Telepon = etTelp.getText().toString();
 
-    tvHasil.setText(Nama+" Pesanan Anda segera kami proses, trimakasih sudah membeli produk kami, kami tunggu pemesanan selanjutnya oleh  "+Telepon)
-
-}
-}
-
-private boolean isValid()
-        {
-        boolean valid=true;
-
-        String Nama=etNama.getText().toString();
-        String Telepon=etTelp.getText().toString();
-
-        if(Nama.isEmpty())
-        {
-        etNama.setError("Nama Belum Diisi");
-        valid=false;
+        if (Nama.isEmpty()) {
+            etN.setError("Nama Belum Diisi");
+            valid = false;
+        } else if (etN.length() < 3) {
+            etN.setError("Nama minimal 3 karakter");
+            valid = false;
+        } else {
+            etN.setError(null);
         }
-        else if(etNama/length()<3)
-        }
-        etNama.setError("Nama minimal 3 karakter");
-        valid=false;
-        }
-
-        else
-        {
-        etNama.setError(null);
-        }
-        if(Telepon.isEmpty())
-        {
-        etTelp.setError("Telepon Belum Diisi");
-        valid=false;
-        }
-
-        else
-        {
-        etTelp.setError(null);
+        if (Telepon.isEmpty()) {
+            etTelp.setError("Telepon Belum Diisi");
+            valid = false;
+        } else {
+            etTelp.setError(null);
         }
         return valid;
-        }
-        }
+    }
+}
 
