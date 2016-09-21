@@ -13,163 +13,165 @@
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     android:paddingTop="16dp"
-    tools:context="id.sch.smktelkom_mlg.tugas01.xirpl2022.tugas01.MainActivity"
-    android:weightSum="1">
+    android:weightSum="1"
+    tools:context="id.sch.smktelkom_mlg.tugas01.xirpl2022.tugas01.MainActivity">
 
     <TextView
+        android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Online Marketing Puspita Rahayu"
-        android:id="@+id/textView5"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_gravity="center_horizontal"/>
+        android:layout_gravity="center_horizontal"
+        android:text="Online Marketing Puspita Rahayu" />
 
     <ImageView
+        android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:id="@+id/imageView"
-        android:src="@drawable/logo"
-        android:layout_below="@+id/textView5"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_below="@+id/textView5"
+        android:src="@drawable/logo" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Nama :"
         android:id="@+id/textView"
-        android:layout_below="@+id/imageView"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/editTextNama"
-        android:layout_below="@+id/textView"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:layout_below="@+id/imageView"
+        android:text="Nama :" />
+
+    <EditText
+        android:id="@+id/editTextNama"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView"
         android:inputType="none" />
 
     <TextView
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nomor Telepon :"
-        android:id="@+id/textView2"
-        android:layout_below="@+id/editTextNama"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/editTextNama"
+        android:text="Nomor Telepon :" />
 
     <EditText
+        android:id="@+id/editTextTelp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/editTextTelp"
-        android:layout_below="@+id/textView2"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView2" />
 
     <RadioGroup
+        android:id="@+id/radioGroupJS"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/editTextTelp"
-        android:id="@+id/radioGroupJS">
+        android:layout_below="@+id/editTextTelp">
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:text="Jasa Pengantar :"
             android:id="@+id/textView4"
-            android:layout_weight="1" />
-
-        <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:text="JNE"
+            android:layout_weight="1"
+            android:text="Jasa Pengantar :" />
+
+        <RadioButton
             android:id="@+id/radioButtonJNE"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:checked="false"
-            android:layout_weight="1" />
+            android:text="JNE" />
 
         <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:text="TIKI"
             android:id="@+id/radioButtonTIKI"
-            android:checked="false"
-            android:layout_weight="1" />
-
-        <TextView
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:text="Orderan"
+            android:layout_weight="1"
+            android:checked="false"
+            android:text="TIKI" />
+
+        <TextView
             android:id="@+id/textView3"
-            android:layout_weight="1" />
-
-        <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:text="Blouse"
+            android:layout_weight="1"
+            android:text="Orderan" />
+
+        <CheckBox
             android:id="@+id/checkBox1"
-            android:checked="false"
-            android:layout_weight="1" />
-
-        <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:text="Joger Pants"
+            android:layout_weight="1"
+            android:checked="false"
+            android:text="Blouse" />
+
+        <CheckBox
             android:id="@+id/checkBox2"
-            android:checked="false"
-            android:layout_weight="1" />
-
-        <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:text="Culotes"
+            android:layout_weight="1"
+            android:checked="false"
+            android:text="Joger Pants" />
+
+        <CheckBox
             android:id="@+id/checkBox3"
-            android:checked="false"
-            android:layout_weight="1" />
-
-        <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:text="Bomber Jacket"
-            android:id="@+id/checkBox4"
+            android:layout_weight="1"
             android:checked="false"
-            android:layout_weight="1" />
+            android:text="Culotes" />
+
+        <CheckBox
+            android:id="@+id/checkBox4"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:checked="false"
+            android:text="Bomber Jacket" />
 
         <TextView
+            android:id="@+id/textView6"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:text="Domisili"
-            android:id="@+id/textView6"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:text="Domisili" />
 
         <Spinner
+            android:id="@+id/spinnerDomisili"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:id="@+id/spinnerDomisili"
             android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/buttonOrder"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_alignTop="@+id/textViewHasil"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
+            android:text="Pesan" />
     </RadioGroup>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Pesan"
-        android:id="@+id/buttonOrder"
-        android:layout_below="@+id/radioGroupJS"
-        android:layout_centerHorizontal="true" />
-
     <TextView
+        android:id="@+id/textViewHasil"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:text="New Text"
-        android:id="@+id/textViewHasil"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
         android:layout_gravity="center_horizontal"
         android:layout_weight="1"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:text="New Text" />
 
 </RelativeLayout>
     </ScrollView>
